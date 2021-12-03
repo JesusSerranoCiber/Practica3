@@ -32,6 +32,7 @@ apt-get update
 apt-get install -y nfs-common
 mkdir /mnt/nfs/
 echo "10.100.199.200:/mnt/nfs /mnt/nfs nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0" >> /etc/fstab
+mount -a
 SCRIPT
 
 Vagrant.configure('2') do |config|
