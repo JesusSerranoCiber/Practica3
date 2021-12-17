@@ -8,11 +8,4 @@ docker service create \
   --mount type=bind,src=/root/.ssh,dst=/var/jenkins_home/.ssh \
   --host "registry.pps.local:10.100.199.200" \
   --replicas 1 \
-  jenkins/jenkins
-
-  -e REGISTRY_HTTP_ADDR=0.0.0.0:5000 \
-  -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/domain.crt \
-  -e REGISTRY_HTTP_TLS_KEY=/certs/domain.key \
-  --replicas 1 \
-  --publish published=5000,target=5000 \
-  registry:latest
+  registry.pps.local:5000/myjenkins:1
